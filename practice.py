@@ -1,3 +1,5 @@
+#!/usr/bin/env python3 
+
 heroes=  {
 "wolverine":
     {"real name": "James Howlett",
@@ -26,3 +28,12 @@ while True:
     print("Invalid stat entered")
 
 print(f"{char_name.capitalize()}'s {char_stat} is: {heroes[char_name][char_stat]}")
+
+
+
+
+
+
+
+
+
