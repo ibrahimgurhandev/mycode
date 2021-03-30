@@ -1,71 +1,73 @@
 import random
 
-def playGame():
+
+def play_game():
     print("Welcome to the Rock-Paper-Scissors game......")
 
-    def getBotChoice():
-        listOfChoices4Bot = ["rock", "paper", "scissors", "chad", "rock", "paper", "scissors"]
-        return listOfChoices4Bot[random.randint(0,3)]
+    def get_bot_choice():
+        list_of_choices_4_bot = ["rock", "paper", "scissors", "chad", "rock", "paper", "scissors"]
+        return list_of_choices_4_bot[random.randint(0, 3)]
 
-    def getUserChoice():
-        result = ""
+    def get_user_choice():
         while True:
-            listOfChoices = ["rock", "paper", "scissors", "q"]
-            Userinput = input("Choose your hand by typing 'scissors', 'rock', or 'paper' -- choose wisely : ").lower()
-            if listOfChoices.__contains__(Userinput):
-                result = Userinput
-                break
+            list_of_choices = ["rock", "paper", "scissors", "q"]
+            user_input = input("Choose your hand by typing 'scissors', 'rock', or 'paper' -- choose wisely : ").lower()
+            if list_of_choices.__contains__(user_input):
+                return user_input
             print("Please choose again, that is not one of the possible hands")
-        return result
 
+    human_score = 0
+    bot_score = 0
     while True:
-        humanScore = 0
-        botScore = 0
 
-        userChoice = getUserChoice()
-        botChoice = getBotChoice()
-        if userChoice == "q":
+
+        user_choice = get_user_choice()
+        bot_choice = get_bot_choice()
+        if user_choice == "q":
             print("I see. You have chosen to quit. What a loser. Come back when you have some courage")
             break
+        print("--------------------------------------")
+        print(f"You chose {user_choice}, while I chose {bot_choice}")
 
-        print(f"You chose {userChoice}, while I chose {botChoice}")
-
-        if botChoice == "chad":
+        if bot_choice == "chad":
             print("Unfortunately for you, I have luckily drawn an ultra rare 'Chad' hand. There is no way to beat it.")
             print("You have lost this round")
-            botScore +=1
-        elif userChoice == botChoice:
+            bot_score += 1
+        elif user_choice == bot_choice:
             print("We have drawn this round")
-        elif userChoice == "scissors":
-            if botChoice == "paper":
+        elif user_choice == "scissors":
+            if bot_choice == "paper":
                 print("You have won this round")
-                humanScore +=1
+                human_score += 1
             else:
                 print("You have lost this round")
-                botScore += 1
-        elif userChoice == "paper":
-            if botChoice == "rock":
+                bot_score += 1
+        elif user_choice == "paper":
+            if bot_choice == "rock":
                 print("You have won this round")
-                humanScore +=1
+                human_score += 1
             else:
                 print("You have lost this round")
-                botScore += 1
-        elif userChoice == "rock":
-            if botChoice == "scissors":
+                bot_score += 1
+        elif user_choice == "rock":
+            if bot_choice == "scissors":
                 print("You have won this round")
-                humanScore += 1
+                human_score += 1
             else:
                 print("You have lost this round")
-                botScore += 1
+                bot_score += 1
         print("--------------------------------------")
-        print("The current score : ")
-        print(f"You have {humanScore} wins ")
-        print(f"I have {botScore} wins")
+        print(">>>>> The current score : ")
+        print(f"You have {human_score} wins ")
+        print(f"I have {bot_score} wins")
         print("--------------------------------------")
         print("to quit at any time -  type 'q'")
         print("OK lets play another round")
+        print("--------------------------------------")
 
 
 def main():
-    playGame()
+    play_game()
+
+
 main()
