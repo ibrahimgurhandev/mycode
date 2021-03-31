@@ -3,10 +3,12 @@ import random
 
 def play_game():
     print("Welcome to the Rock-Paper-Scissors game......")
+    human_score = 0
+    bot_score = 0
 
     def get_bot_choice():
         list_of_choices_4_bot = ["rock", "paper", "scissors", "chad", "rock", "paper", "scissors"]
-        return list_of_choices_4_bot[random.randint(0, 3)]
+        return list_of_choices_4_bot[random.randint(0, 6)]
 
     def get_user_choice():
         while True:
@@ -16,10 +18,7 @@ def play_game():
                 return user_input
             print("Please choose again, that is not one of the possible hands")
 
-    human_score = 0
-    bot_score = 0
     while True:
-
 
         user_choice = get_user_choice()
         bot_choice = get_bot_choice()
