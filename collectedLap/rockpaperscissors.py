@@ -21,7 +21,6 @@ def play_game():
             print("Please choose again, that is not one of the possible hands")
 
     while True:
-
         user_choice = get_user_choice()
         bot_choice = get_bot_choice()
         if user_choice == "q":
@@ -62,7 +61,7 @@ def play_game():
         print(f"You have {human_score} wins ")
         print(f"I have {bot_score} wins")
         print("--------------------------------------")
-        print("to quit at any time -  type 'q'")
+        print(">>>>> to quit at any time -  type 'q'")
         print("OK lets play another round")
         print("--------------------------------------")
 
