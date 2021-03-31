@@ -1,16 +1,18 @@
+#!/usr/bin/env python3
 import random
 
-
 def play_game():
-    print("Welcome to the Rock-Paper-Scissors game......")
+    print("WELCOME TO THE ROCK PAPER SCISSORS GAME......")
     human_score = 0
     bot_score = 0
 
     def get_bot_choice():
+        """ Returns random hand for the bot """
         list_of_choices_4_bot = ["rock", "paper", "scissors", "chad", "rock", "paper", "scissors"]
         return list_of_choices_4_bot[random.randint(0, 6)]
 
     def get_user_choice():
+        """ asks user for their hand until correct input """
         while True:
             list_of_choices = ["rock", "paper", "scissors", "q"]
             user_input = input("Choose your hand by typing 'scissors', 'rock', or 'paper' -- choose wisely : ").lower()
@@ -66,7 +68,8 @@ def play_game():
 
 
 def main():
+    """ Run-time code """
     play_game()
 
-
-main()
+if __name__ == "__main__":
+    main()
