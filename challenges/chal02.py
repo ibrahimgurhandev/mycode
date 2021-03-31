@@ -15,7 +15,7 @@ def choose_farm():
                 print(animal)
 choose_farm()
 
-def choose_farm_only_animals():
+def choose_farm_return_animals_only():
     farm_chosen = input("what farm will you like to look at: NE, W or SE: ").upper()
     for item in farms:
         if farm_chosen in item["name"]:
