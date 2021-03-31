@@ -22,7 +22,7 @@ def choose_farm_return_animals_only():
             for animal in item["agriculture"]:
                 if animal not in {"carrots", "celery"}:
                     print(animal)
-choose_farm_only_animals()
+choose_farm_return_animals_only()
 
 
 
