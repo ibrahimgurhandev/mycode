@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-
+import random
 import requests
 
 def main():
     """Run time code"""
-    r = requests.get('https://cat-fact.herokuapp.com/facts').json()
+    city = input("what city do you live in?: ")
+    r = requests.get(f'https://api.openweathermap.org/data/2.5/weather?q={city}&appid=003bd0423f8f627a496637434f9231df').json()
 
-    for catfact in r:
-        print(catfact.get("text"))
+    print(r["weather"][0]["description"])
 main()
 
