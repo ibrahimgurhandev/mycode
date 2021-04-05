@@ -11,7 +11,7 @@ def calculator():
             if op in ["+", "/", "-", "*"]:
                 return op
 
-    def get_num(count):
+    def get_nums(count):
         while True:
             try:
                 num = float(input(f"Enter {count} number -  it can be a float or integer: "))
@@ -27,7 +27,7 @@ def calculator():
                      '*': operator.mul,
                      '/': operator.truediv}
         try:
-            print(operators[op](get_num("first"), get_num("second")))
+            print(operators[op](get_nums("first"), get_nums("second")))
         except ZeroDivisionError:
             print("HEYYY! you can't divide by ZERO. DON'T YOU DARE DO THAT AGAIN")
             calculate()
