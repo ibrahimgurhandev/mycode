@@ -142,7 +142,6 @@ Actions:
 
 
 def gameOver(player):
-    os.system('clear') # clear the screen
     if player.health < 1:
         print("You have no health left")
         print("Thanks for playing...")
@@ -150,7 +149,6 @@ def gameOver(player):
 
 
 def showStatus(): # display the player's status
-    os.system('clear') # clear the screen
     if 'item' in rooms[currentRoom]:
         print('You see a ' + rooms[currentRoom]['item'])
 #    print('=================')
