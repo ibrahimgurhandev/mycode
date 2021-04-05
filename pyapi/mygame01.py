@@ -69,10 +69,13 @@ def roll_enemy(Werewolf,Dragon,Troll):
 
 
 def fight_monster():
+    os.system('clear') # clear the screen
+
     enemy = roll_enemy(Werewolf,Dragon,Troll)
     print("You have encountered a ", enemy.name)
     print("you have 2 options...")
     while enemy.health > 0:
+        os.system('clear')  # clear the screen
         choice = input("1. Attack \n2. RUN!\n>")
 
         if choice == "1":
@@ -139,6 +142,7 @@ Actions:
 
 
 def gameOver(player):
+    os.system('clear') # clear the screen
     if player.health < 1:
         print("You have no health left")
         print("Thanks for playing...")
@@ -146,6 +150,7 @@ def gameOver(player):
 
 
 def showStatus(): # display the player's status
+    os.system('clear') # clear the screen
     if 'item' in rooms[currentRoom]:
         print('You see a ' + rooms[currentRoom]['item'])
 #    print('=================')
@@ -243,7 +248,7 @@ rooms = {
 # start the player in the Hall
 currentRoom = 'Forest'
 
-# os.system('clear')
+os.system('clear')
 
 # select class
 
@@ -267,7 +272,7 @@ while True:
     # split allows an items to have a space on them
     # get golden key is returned ["get", "golden key"]
     move = move.lower().split(" ", 1)
-    # os.system('clear') # clear the screen
+    os.system('clear') # clear the screen
     if move[0] == 'look':
         if 'info' in rooms[currentRoom]:
             print(rooms[currentRoom]['info'])
@@ -283,6 +288,7 @@ while True:
 
     # if they type 'go' first
     if move[0] == 'go':
+        os.system('clear')  # clear the screen
         # check that they are allowed wherever they want to go
         if move[1] in rooms[currentRoom]:
             # set the current room to the new room
@@ -301,6 +307,8 @@ while True:
 
     # if they type 'get' first
     if move[0] == 'get':
+        os.system('clear')  # clear the screen
+
         # if the room contains an item, and the item is the one they want to get
         if "item" in rooms[currentRoom] and move[1] in rooms[currentRoom]['item']:
             # add the item to their inventory
