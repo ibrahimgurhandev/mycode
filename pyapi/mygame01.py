@@ -248,7 +248,6 @@ rooms = {
 # start the player in the Hall
 currentRoom = 'Forest'
 
-os.system('clear')
 
 # select class
 
