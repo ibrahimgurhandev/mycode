@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Challenge</title>
+</head>
+<body>
+      <form action = "/" method = "POST">
+
+         <p><h3>Add a host</h3></p>
+         <p><input type = "text" name = "hostname" placeholder="Enter Host" required/></p>
+          <p><input type = "text" name = "ip" placeholder="Enter IP Address" required/></p>
+          <p><input type = "text" name = "fqdn" placeholder="Enter FQDN" required/></p>
+         <p><input type = "submit" value = 'add'/></p>
+      </form>
+
+
+    {% for host in groups %}
+    <p>{{ host.ip }}  -  {{ host.fqdn }} # {{ host.hostname }}</p>
+    {% endfor %}
+
+
+</body>
+</html>
